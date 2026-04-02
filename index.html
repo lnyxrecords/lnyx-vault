@@ -1,124 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LNYX | The Sound of the Future</title>
-    <meta name="description" content="Official command center for LNYX. High-energy Electro House, EDM, and cinematic soundscapes.">
-    <link rel="stylesheet" href="styles.css">
+    <title>LNYX RECORDS // THE VAULT</title>
+    <style>
+        /* =========================================
+           LNYX RECORDS - CORE STYLESHEET (V3.2)
+           ========================================= */
+        :root {
+            --bg-color: #050505;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --neon-cyan: #00f3ff;
+            --neon-magenta: #ff00ff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+
+        /* --- HERO --- */
+        .hero {
+            position: relative; height: 100vh; width: 100%;
+            display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden;
+        }
+        .video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .video-background video { width: 100%; height: 100%; object-fit: cover; }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(5, 5, 5, 0.2) 0%, rgba(5, 5, 5, 0.9) 100%);
+            z-index: 2;
+        }
+        .hero-content { position: relative; z-index: 3; padding: 20px; }
+        .hero h1 { font-size: clamp(3rem, 10vw, 7rem); letter-spacing: 15px; margin-bottom: 10px; text-shadow: 0 0 25px var(--neon-cyan), 0 0 50px var(--neon-magenta); text-transform: uppercase; }
+        
+        .social-nav { display: flex; gap: 15px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap; }
+        .social-icon { color: #fff; text-decoration: none; padding: 10px 18px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; font-size: 0.75rem; letter-spacing: 2px; transition: 0.3s; background: var(--glass-bg); }
+        .social-icon:hover { border-color: var(--neon-cyan); box-shadow: 0 0 15px var(--neon-cyan); color: var(--neon-cyan); }
+
+        /* --- SECCIONES --- */
+        section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        h2 { font-size: 2.2rem; margin-bottom: 40px; letter-spacing: 3px; text-transform: uppercase; }
+
+        /* --- VIDEO VAULT --- */
+        .vault-video h2 { color: var(--neon-magenta); }
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.15); margin-bottom: 30px;
+            background: #000;
+        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        /* --- AUDIO VAULT --- */
+        .audio-section h2 { color: var(--neon-cyan); }
+        .audiomack-grid { display: flex; flex-direction: column; gap: 25px; }
+        .audiomack-card { border-radius: 8px; overflow: hidden; border: 1px solid #1a1a1a; transition: 0.3s; }
+        .audiomack-card:hover { box-shadow: 0 0 20px var(--neon-cyan); }
+
+        /* --- REGISTRO --- */
+        .table-wrapper { width: 100%; overflow-x: auto; border-radius: 8px; margin-top: 20px; border: 1px solid #222; }
+        .vault-table { width: 100%; border-collapse: collapse; min-width: 700px; background: #0a0a0a; font-family: 'Courier New', Courier, monospace; text-align: left; }
+        .vault-table th, .vault-table td { padding: 15px; border-bottom: 1px solid #222; }
+        .vault-table th { color: var(--neon-magenta); background: #111; font-size: 0.8rem; }
+        .badge-status { padding: 3px 8px; border: 1px solid var(--neon-cyan); color: var(--neon-cyan); font-size: 0.7rem; }
+
+        /* --- BUTTONS --- */
+        .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .btn-lnyx { padding: 18px; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; transition: 0.3s; display: block; text-align: center; }
+        .btn-cyan { background: var(--neon-cyan); color: #000; box-shadow: 0 0 15px var(--neon-cyan); }
+        .btn-magenta { border: 2px solid var(--neon-magenta); color: var(--neon-magenta); }
+        .btn-magenta:hover { background: var(--neon-magenta); color: #fff; }
+
+        footer { padding: 40px 20px; border-top: 1px solid #1a1a1a; color: var(--text-secondary); font-size: 0.8rem; text-align: center; }
+        .contact-mail { color: var(--neon-cyan); text-decoration: none; font-weight: bold; }
+    </style>
 </head>
 <body>
 
     <header class="hero">
         <div class="video-background">
-            <video autoplay loop muted playsinline>
+            <video autoplay muted loop playsinline>
                 <source src="hero-bg.mp4" type="video/mp4">
-                Your browser does not support the video tag.
             </video>
         </div>
-        
         <div class="hero-overlay"></div>
-
         <div class="hero-content">
             <h1>LNYX</h1>
-            <p>THE SOUND OF THE FUTURE</p>
-            <a href="https://audiomack.com/LNYXOfficial" class="cta-button" target="_blank">STREAM ON AUDIOMACK</a>
+            <p>Laboratorios de Sonido // 2026</p>
+            <div class="social-nav">
+                <a href="https://www.tiktok.com/@lnyx.sounds.records" class="social-icon" target="_blank">TIKTOK</a>
+                <a href="https://audiomack.com/lnyxofficial" class="social-icon" target="_blank">AUDIOMACK</a>
+                <a href="https://www.youtube.com/@LNYXOfficial" class="social-icon" target="_blank">YOUTUBE</a>
+            </div>
+            <a href="#audio" class="btn-lnyx btn-cyan">Acceder al Catálogo</a>
         </div>
     </header>
 
-    <section class="vault-section">
-        <h2>THE VAULT // VISUALS</h2>
-        
-        <div class="lnyx-video-container">
-            <iframe width="1468" height="825" src="https://www.youtube.com/embed/WULZC0DLaIc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <section class="vault-video">
+        <h2>Transmisión Visual Oficial</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/fYiObEvijHM?rel=0&modestbranding=1" title="LNYX Visualizer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </section>
 
-    <section class="audio-vault-section">
-        <h2>THE VAULT // AUDIO</h2>
-
-        <div class="audiomack-container">
-            <iframe src="https://audiomack.com/embed/song/lnyxofficial/skayward-thoughts?background=1" scrolling="no" width="100%" height="252" frameborder="0" title="LNYX - Skyward Thoughts"></iframe>
-        </div>
-
-        <div class="audiomack-container">
-            <iframe src="https://audiomack.com/embed/song/lnyxofficial/i-found-you?background=1" scrolling="no" width="100%" height="252" frameborder="0" title="LNYX - I Found You"></iframe>
-        </div>
-        
-        <div class="audiomack-container">
-            <iframe src="https://audiomack.com/embed/song/lnyxofficial/the-big-bang-system-overload-epic-big-room-edm?background=1" scrolling="no" width="100%" height="252" frameborder="0" title="LNYX - The Big Bang"></iframe>
-        </div>
-
-        <div class="audiomack-container">
-            <iframe src="https://audiomack.com/embed/song/lnyxofficial/prism-of-love?background=1" scrolling="no" width="100%" height="252" frameborder="0" title="LNYX - Prism of Love"></iframe>
+    <section id="audio" class="audio-section">
+        <h2>La Bóveda // Transmisiones</h2>
+        <div class="audiomack-grid">
+            <div class="audiomack-card"><iframe src="https://audiomack.com/embed/lnyxofficial/song/ridewhitme?background=1" scrolling="no" width="100%" height="252" frameborder="0"></iframe></div>
+            <div class="audiomack-card"><iframe src="https://audiomack.com/embed/lnyxofficial/song/binary-love?background=1" scrolling="no" width="100%" height="252" frameborder="0"></iframe></div>
+            <div class="audiomack-card"><iframe src="https://audiomack.com/embed/lnyxofficial/song/i-just-wanna-smoke?background=1" scrolling="no" width="100%" height="252" frameborder="0"></iframe></div>
+            <div class="audiomack-card"><iframe src="https://audiomack.com/embed/lnyxofficial/song/skyward-thoughts?background=1" scrolling="no" width="100%" height="252" frameborder="0"></iframe></div>
+            <div class="audiomack-card"><iframe src="https://audiomack.com/embed/lnyxofficial/song/i-found-you?background=1" scrolling="no" width="100%" height="252" frameborder="0"></iframe></div>
+            <div class="audiomack-card"><iframe src="https://audiomack.com/embed/lnyxofficial/song/the-big-bang-system-overload-epic-big-room-edm?background=1" scrolling="no" width="100%" height="252" frameborder="0"></iframe></div>
+            <div class="audiomack-card"><iframe src="https://audiomack.com/embed/lnyxofficial/song/prism-of-love?background=1" scrolling="no" width="100%" height="252" frameborder="0"></iframe></div>
         </div>
     </section>
 
-    <section class="registry-section">
-        <h2>OFFICIAL DISCOGRAPHY REGISTRY</h2>
-        <p class="registry-subtitle">Timestamped & Verified by LNYX Records</p>
-        
-        <div class="table-container">
+    <section>
+        <h2>Registro Oficial de Propiedad</h2>
+        <div class="table-wrapper">
             <table class="vault-table">
-                <thead>
-                    <tr>
-                        <th>TRACK TITLE</th>
-                        <th>CREATION DATE</th>
-                        <th>ORIGIN STUDIO</th>
-                        <th>RIGHTS STATUS</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>PISTA</th><th>FECHA</th><th>ESTUDIO</th><th>DERECHOS</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td>Skyward Thoughts</td>
-                        <td>March 2026</td>
-                        <td>LNYX Sound Labs</td>
-                        <td><span class="badge protected">© PROTECTED</span></td>
-                    </tr>
-                    <tr>
-                        <td>I Found You</td>
-                        <td>March 2026</td>
-                        <td>LNYX Sound Labs</td>
-                        <td><span class="badge protected">© PROTECTED</span></td>
-                    </tr>
-                    <tr>
-                        <td>The Big Bang</td>
-                        <td>March 2026</td>
-                        <td>LNYX Sound Labs</td>
-                        <td><span class="badge protected">© PROTECTED</span></td>
-                    </tr>
-                    <tr>
-                        <td>Prism of Love</td>
-                        <td>March 2026</td>
-                        <td>LNYX Sound Labs</td>
-                        <td><span class="badge protected">© PROTECTED</span></td>
-                    </tr>
+                    <tr><td>Ride With Me</td><td>02/04/2026</td><td>LNYX Sound Labs</td><td><span class="badge-status">PROTEGIDO</span></td></tr>
+                    <tr><td>Binary Love</td><td>02/04/2026</td><td>LNYX Sound Labs</td><td><span class="badge-status">PROTEGIDO</span></td></tr>
+                    <tr><td>I Just Wanna Smoke</td><td>01/04/2026</td><td>LNYX Sound Labs</td><td><span class="badge-status">PROTEGIDO</span></td></tr>
+                    <tr><td>Skyward Thoughts</td><td>31/03/2026</td><td>LNYX Sound Labs</td><td><span class="badge-status">PROTEGIDO</span></td></tr>
+                    <tr><td>I Found You</td><td>31/03/2026</td><td>LNYX Sound Labs</td><td><span class="badge-status">PROTEGIDO</span></td></tr>
+                    <tr><td>The Big Bang [System Overload]</td><td>29/03/2026</td><td>LNYX Sound Labs</td><td><span class="badge-status">PROTEGIDO</span></td></tr>
+                    <tr><td>Prism of Love [Neon Spectrum]</td><td>29/03/2026</td><td>LNYX Sound Labs</td><td><span class="badge-status">PROTEGIDO</span></td></tr>
                 </tbody>
             </table>
         </div>
     </section>
 
-    <section class="support-section">
-        <h2>FUND THE FUTURE</h2>
-        <p class="support-subtitle">Support LNYX Records directly. Fuel the next drop.</p>
-        
-        <div class="support-buttons">
-            <a href="https://www.paypal.com/ncp/payment/8BQ2H43YTX5RG" class="cta-button support-btn usd-btn" target="_blank">
-                SUPPORT GLOBALLY (USD)
-            </a>
-            
-            <a href="https://cafecito.app/lnyx" class="cta-button support-btn ars-btn" target="_blank">
-                COMPRAR UN DISCO (ARS)
-            </a>
+    <section>
+        <h2>Financia el Futuro</h2>
+        <div class="support-grid">
+            <a href="https://www.paypal.com/ncp/payment/8BQ2H43YTX5RG" class="btn-lnyx btn-cyan" target="_blank">Apoyo Global (USD)</a>
+            <a href="https://cafecito.app/lnyx" class="btn-lnyx btn-magenta" target="_blank">Comprar un Disco (ARS)</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 LNYX Records. Unauthorized reproduction is a violation of applicable laws. All master and composition rights reserved.</p>
-        <p style="margin-top: 15px; font-weight: bold; letter-spacing: 1px; color: var(--neon-cyan);">
-            TRANSMISSION CONTACT: <a href="mailto:lnyxsoundlabs@gmail.com" style="color: var(--text-primary); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#00f3ff'" onmouseout="this.style.color='#ffffff'">lnyxsoundlabs@gmail.com</a>
-        </p>
+        <p>© 2026 LNYX Records. Buenos Aires, Argentina.</p>
+        <p>Contacto: <a href="mailto:lnyxsoundlabs@gmail.com" class="contact-mail">lnyxsoundlabs@gmail.com</a></p>
     </footer>
-
 </body>
 </html>
